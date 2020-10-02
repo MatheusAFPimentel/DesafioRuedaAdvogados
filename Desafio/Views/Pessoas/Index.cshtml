@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Desafio.Models.Pessoa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<button class="btn btn-secondary">
+        <a href="/Pessoas/Create" style="color:black">Cadastrar usuário</a>
+</button>
+<table class="table mt-5 border" style=" background-color: #2f3640">
+    <tr>
+        <th>
+            <h3 style="color:aliceblue">Cliente</h3>
+        </th>
+        <th>
+            <h3 style="color:aliceblue">Data de nascimento</h3>
+        </th>
+        <th>
+            <h3 style="color:aliceblue">Salário</h3>
+        </th>
+        <th>
+            <h3 style="color:aliceblue">Telefone</h3>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr >
+        <td style="color:aliceblue">
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td style="color:aliceblue">
+            @Html.DisplayFor(modelItem => item.dataNascimento)
+        </td>
+        <td style="color:aliceblue">
+            @Html.DisplayFor(modelItem => item.salario)
+        </td>
+        <td style="color:aliceblue">
+            @Html.DisplayFor(modelItem => item.numeroTelefone)
+        </td>
+        <td>
+            <a style="color:aliceblue" href="/Pessoas/Edit/1">Editar</a>|
+            <a style="color:aliceblue" href="/Pessoas/Details/2">Detalhes</a> |
+            <a style="color:aliceblue" href="/Pessoas/Delete/2">Apagar</a>
+        </td>
+    </tr>
+}
+
+</table>
